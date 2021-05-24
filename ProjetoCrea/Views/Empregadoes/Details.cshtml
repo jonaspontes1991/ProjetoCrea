@@ -1,0 +1,42 @@
+﻿@model ProjetoCrea.Models.Empregado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Empregado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sobrenome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sobrenome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataEntrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataEntrada)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.empregadoId }) |
+    @Html.ActionLink("Voltar Para Lista", "Index")
+</p>

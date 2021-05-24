@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ProjetoCrea.Models.Empregado>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Cadastro</h2>
+
+<p>
+    @Html.ActionLink("Criar Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sobrenome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataEntrada)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sobrenome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataEntrada)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.empregadoId }) |
+            @Html.ActionLink("Detailhes", "Details", new { id=item.empregadoId }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.empregadoId })
+        </td>
+    </tr>
+}
+
+</table>
